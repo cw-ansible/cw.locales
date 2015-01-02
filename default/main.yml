@@ -1,0 +1,22 @@
+---
+
+## List of locales to be installed.
+# Each element must be suitable for the "/usr/share/i18n/SUPPORTED" file.
+#
+locales_supported:
+  - en_US.UTF-8 UTF-8
+  #- en_US ISO-8859-1
+  #- en_US.ISO-8859-15 ISO-8859-15
+  - fr_FR.UTF-8 UTF-8
+  # - fr_FR ISO-8859-1
+  # - fr_FR@euro ISO-8859-15
+
+## List of faked locales.
+# If for some reason you have to defined your own locales that are an alias
+# of an existing one, you can defined them here.
+#
+# Create an alias of en_US named en_CW.
+# Now you can use "en_CW.UTF8" as a new local.
+#
+# locales_faked:
+#  - { src: 'en_US', dst: 'en_CW' }
