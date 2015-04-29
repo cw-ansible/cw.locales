@@ -1,0 +1,17 @@
+---
+
+- name: Add default locales
+  lineinfile:
+    dest: /var/lib/locales/supported.d/locale
+    line: '{{item}}'
+    create: yes
+    insertafter: EOF
+  notify: Generate locales
+  with_items: locales_supported
+
+- name: link locale.gen configuration file
+  file:
+    path: /etc/locale.gen
+    src: /var/lib/locales/supported.d/locale
+    state: link
+  notify: Generate locales

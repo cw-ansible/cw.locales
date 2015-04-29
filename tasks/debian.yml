@@ -1,0 +1,11 @@
+---
+
+- name: Add default locales
+  lineinfile:
+    dest: /etc/locale.gen
+    line: '{{ item }}'
+    create: yes
+    insertafter: EOF
+  notify: Generate locales
+  with_items: locales_supported
+
